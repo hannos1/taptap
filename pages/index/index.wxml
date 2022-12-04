@@ -1,0 +1,121 @@
+<view class="page">
+<view class="page_bd">
+<block wx:if="{{bar == 0}}">
+<scroll-view class="page_scroll">
+<view class="page_recent">
+<view class="page_recent__title">
+<label for="" class="page_title__label">最近浏览</label>
+</view>
+<view class="page_recent__bd">
+<scroll-view class="page_recent__scroll" scroll-x="true">
+<block wx:for="{{recentgames}}" wx:key="id">
+<view class="page_recent__item">
+<view class="page_recent_imagemask" style="background-image:url({{item.pic}});">
+</view>
+<view class="page_item_labelmask">
+<label class="page_item__label">{{item.title}}</label>
+</view>  
+</view>
+</block>
+</scroll-view>
+</view>
+</view>
+
+<view class="page_concern">
+<view class="page_concern__title">
+<label for="" class="page_title__label">关注的游戏论坛</label>
+<a href="" class="page_a__showmore">查看更多</a>
+</view>
+<view class="page_concern__bd">
+<view class="page_concern_bdmask">
+<block wx:for="{{concerns}}" wx:key="id">
+<view class="page_concern__item">
+<view class="page_concern__itemmask">
+<view class="page_concern__imagemask" style="background-image:url({{item.pic}});"></view>
+<view class="page_concern__itemtitle">{{item.title}}</view>
+<view class="page_concern__itemnumber">主贴:{{item.numbers}}</view>
+</view>
+</view>
+</block>
+</view>
+</view>
+</view>
+
+<view class="page_hot">
+<view class="page_hot__title">
+<label for="" class="page_title__label">热门的游戏论坛</label>
+<a href="" class="page_a__showmore">查看更多</a>
+</view>
+<view class="page_hot__bd">
+<scroll-view class="page_hot__scroll" scroll-x="true">
+<block wx:for="{{hots}}">
+<view class="page_hot__item">
+<view class="page_hot_itemmask">
+<view class="page_hot_bgmask" style="background-image: url({{item.backgroundimage}});"></view>
+<view class="page_hot_imagemask" style="background-image: url({{item.pic}});"></view>
+<view class="page_hot_titlelabel">{{item.title}}</view>
+<view class="page_hot_numbers">主贴:{{item.numbers}}</view>
+</view>
+</view>
+</block>
+</scroll-view>
+</view>
+</view>
+
+<view class="page_official">
+<view class="page_official__title">
+<label for="" class="page_title__label">官方论坛</label>
+<a href="" class="page_a__showmore">查看更多</a>
+</view>
+<view class="page_official__bd">
+  <view class="page_official_bdmask">
+<block wx:for="{{officials}}" wx:key="id">
+<view class="page_official__item">
+<view class="page_official__itemmask">
+<view class="page_official__imagemask" style="background-image:url({{item.pic}});"></view>
+<view class="page_official__itemtitle">{{item.title}}</view>
+<view class="page_official__itemnumber">主贴:{{item.numbers}}</view>
+</view>
+</view>
+</block>
+</view>
+</view>
+</view>
+
+<view class="page_end">
+<label class="page_end__lable">暂无更多</label>
+</view>
+</scroll-view>
+</block>
+<block wx:if="{{bar == 1}}">
+<view>message</view>
+</block>
+<block wx:if="{{bar == 2}}">
+<view>me</view>
+</block>
+</view>
+<view class="page_ft">
+<view class="page_bar">
+<view bindtap="selectbar" data-bar="0" class="page_bar__index">
+<view class="{{bar != 0 && 'page_bar__image'}} {{bar == 0 && 'page_bar__homefill'}}">
+</view>
+<label for="" class="page_bar__label">首页</label>
+</view>
+<view bindtap="selectbar" data-bar="1" class="page_bar__dynamic">
+<view class="{{bar != 1 && 'page_bar__image'}} {{bar == 1 && 'page_bar__dynamicfill'}}">
+</view>
+<label for="" class="page_bar__label">动态</label>
+</view>
+<view bindtap="selectbar" data-bar="2" class="page_bar__me">
+<view class="{{bar != 2 && 'page_bar__image'}} {{bar == 2 && 'page_bar__myfill'}}">
+</view>
+<label for="" class="page_bar__label">我</label>
+</view>
+</view>
+</view>
+</view>
+
+
+
+
+
