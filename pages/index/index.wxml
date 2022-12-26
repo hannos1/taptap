@@ -1,4 +1,17 @@
 <view class="page">
+<view class="searchbar_container" style="height:{{navHeight}}px;">
+<block wx:if="{{bar!=2}}">
+<view class="searchbar_img" style="top:{{navTop}}px;background-image:url('https://img2.tapimg.com/bbcode/images/1a667685a3d219cfd780ee3f0592a067.png');"></view>
+<view class="searchbar_box" style="top:{{navTop}}px;" bindtap="searchbar">
+<view class="searchbar_box__img"></view>
+<view class="searchbar_box__label">搜游戏攻略、社区</view>
+</view>
+</block>
+<block wx:if="{{bar==2}}">
+<view class="searchbar_title" style="top:{{navTop}}px;">MapMap</view>
+</block>
+</view>
+
 <view class="page_bd">
 <block wx:if="{{bar == 0}}">
 <scroll-view class="page_scroll">
@@ -48,7 +61,7 @@
 </view>
 <view class="page_hot__bd">
 <scroll-view class="page_hot__scroll" scroll-x="true">
-<block wx:for="{{hots}}">
+<block wx:for="{{hots}}" wx:key="id">
 <view class="page_hot__item">
 <view class="page_hot_itemmask">
 <view class="page_hot_bgmask" style="background-image: url({{item.backgroundimage}});"></view>
@@ -87,13 +100,16 @@
 </view>
 </scroll-view>
 </block>
+
 <block wx:if="{{bar == 1}}">
 <view>message</view>
 </block>
+
 <block wx:if="{{bar == 2}}">
 <view>me</view>
 </block>
 </view>
+
 <view class="page_ft">
 <view class="page_bar">
 <view bindtap="selectbar" data-bar="0" class="page_bar__index">
@@ -113,6 +129,7 @@
 </view>
 </view>
 </view>
+
 </view>
 
 

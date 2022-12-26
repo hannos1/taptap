@@ -8,7 +8,9 @@ Page({
     concerns:[],
     hots:[],
     officials:[],
-    recentgames:[]
+    recentgames:[],
+    navHeight:app.globalData.navHeight,
+    navTop:app.globalData.navTop,
     },
 
   // 事件处理函数
@@ -22,6 +24,12 @@ Page({
     // console.log(bar);
     this.setData({
       bar:bar
+    })
+  },
+
+  searchbar(){
+    wx.navigateTo({
+      url: '/pages/search/search',
     })
   },
 
