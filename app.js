@@ -11,10 +11,12 @@ App({
         // console.log(navHeight)
         // let windowHeight = res.windowHeight;
         let navTop = menuButtonObject.top
+        let objectheight = menuButtonObject.height;
         // console.log(navTop)
         Object.assign(this.globalData,{
           navHeight,
           navTop,
+          objectheight
         })
       }
     })
@@ -22,5 +24,6 @@ App({
   globalData: {
     navHeight:0,
     navTop:0,
+    objectheight:0
   }
 })

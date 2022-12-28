@@ -1,16 +1,29 @@
 <view class="page">
 <view class="searchbar_container" style="height:{{navHeight}}px;">
 <block wx:if="{{bar!=2}}">
-<view class="searchbar_img" style="top:{{navTop}}px;background-image:url('https://img2.tapimg.com/bbcode/images/1a667685a3d219cfd780ee3f0592a067.png');"></view>
-<view class="searchbar_box" style="top:{{navTop}}px;" bindtap="searchbar">
-<view class="searchbar_box__img"></view>
-<view class="searchbar_box__label">搜游戏攻略、社区</view>
+<view class="searchbar_img" style="top:{{navTop}}px;width:{{objectheight*2.58}}px;height:{{objectheight}}px;background-image:url('https://img2.tapimg.com/bbcode/images/1a667685a3d219cfd780ee3f0592a067.png');"></view>
+<view class="searchbar_box" style="top:{{navTop}}px;height:{{objectheight}}px;" bindtap="searchbar">
+<view class="searchbar_box__img" style="width:{{0.74*objectheight}}px;height:{{0.74*objectheight}}px;"></view>
+<view class="searchbar_box__label" style="height:{{objectheight}}px;line-height:{{objectheight}}px">搜游戏攻略、社区</view>
 </view>
 </block>
 <block wx:if="{{bar==2}}">
-<view class="searchbar_title" style="top:{{navTop}}px;">MapMap</view>
+<view class="searchbar_title" style="top:{{navTop}}px;height:{{objectheight}}px;line-height:{{objectheight}}px">MapMap</view>
 </block>
 </view>
+
+<block wx:if="{{bar == 1}}">
+<view class="message_swiperbar">
+<view class="message_swiperbar__baritem" bindtap="selectmessage" data-message="0">
+<view class="message_swiperbar__barlabel {{message == 0 && 'message_swiperbar__barlabelcheck'}}">推荐</view>
+<view class="{{message == 0 && 'message_swiperbar__barborder'}}"></view>
+</view>
+<view class="message_swiperbar__baritem" bindtap="selectmessage" data-message="1">
+<view class="message_swiperbar__barlabel {{message == 1 && 'message_swiperbar__barlabelcheck'}}">关注</view>
+<view class="{{message == 1 && 'message_swiperbar__barborder'}}"></view>
+</view>
+</view>
+</block>
 
 <view class="page_bd">
 <block wx:if="{{bar == 0}}">
@@ -102,7 +115,67 @@
 </block>
 
 <block wx:if="{{bar == 1}}">
-<view>message</view>
+<swiper class="message_swiper" current="{{message}}" bindchange="messageswiper">
+  <swiper-item class="message_swiperitem">
+     <scroll-view class="message_swiperitem__scrollview">
+       <view class="message_item__suggest">
+        <view class="message_item__hd">
+          <view class="message_item__hdimg" style="background-image:url('https://tse4-mm.cn.bing.net/th/id/OIP-C.T7WDrLOqJu0kABZysi2nUwAAAA?pid=ImgDet&rs=1');"></view>
+          <view class="message_item__name">手谈姬sdfsdfssdfsdfsfdfsd</view>
+          <view class="message_item_tsmask">
+          <view class="message_item__time">11月26日sdfsdfsdfsdf</view>
+          <view class="message_item__section">游戏杂谈sdfssdfsdsfdfsdf</view>
+          </view>
+        </view>
+        <view class="message_item__bd">
+          <view class="message_item__bdtitle">敖厂长又被喷了敖sdfsdfdsfsdfafadfafdafdafafdafdafafdafa</view>
+          <view class="message_item__bdartical">设计的覅圣诞节欧菲JFK你的身份看上的那份数量的快捷方式看大家分厘卡圣诞节分类打算离开房间啊收到了JFK是立刻搭街坊昆仑山京东方顺利打开附件是快递放假了</view>
+          <view class="message_item__bdimg" style="height:{{388}}rpx;background-image:url('https://img.3dmgame.com/uploads/images/thumbpicfirst/20200915/1600132818_429312.jpg');"></view>
+        </view>
+        <view class="message_item__ft">
+          <view class="message_item__support">
+            <view class="message_item__supportimg"></view>
+            <view class="message_item__supportnumber">1318</view>
+          </view>
+          <view class="message_item__comments">
+            <view class="message_item__commentsimg"></view>
+            <view class="message_item__commentsnumber">576</view>
+          </view>
+        </view>
+       </view> 
+       
+     </scroll-view>
+  </swiper-item>
+  <swiper-item class="message_swiperitem">
+     <scroll-view class="message_swiperitem__scrollview">
+      <view class="message_item__suggest">
+        <view class="message_item__hd">
+          <view class="message_item__hdimg" style="background-image:url('https://tse4-mm.cn.bing.net/th/id/OIP-C.T7WDrLOqJu0kABZysi2nUwAAAA?pid=ImgDet&rs=1');"></view>
+          <view class="message_item__name">手谈姬sdfsdfssdfsdfsfdfsd</view>
+          <view class="message_item_tsmask">
+          <view class="message_item__time">11月26日sdfsdfsdfsdf</view>
+          <view class="message_item__section">游戏杂谈sdfssdfsdsfdfsdf</view>
+          </view>
+        </view>
+        <view class="message_item__bd">
+          <view class="message_item__bdtitle">敖厂长又被喷了敖</view>
+          <view class="message_item__bdartical">设计的覅圣诞节欧菲JFK你的身份看上的那份数量的快捷方式看大家分厘卡圣诞节分类打算离开房间啊收到了JFK是立刻搭街坊昆仑山京东方顺利打开附件是快递放假了</view>
+          <view class="message_item__bdimg" style="height:{{388}}rpx;background-image:url('https://img.3dmgame.com/uploads/images/thumbpicfirst/20200915/1600132818_429312.jpg');"></view>
+        </view>
+        <view class="message_item__ft">
+          <view class="message_item__support">
+            <view class="message_item__supportimg"></view>
+            <view class="message_item__supportnumber">1318</view>
+          </view>
+          <view class="message_item__comments">
+            <view class="message_item__commentsimg"></view>
+            <view class="message_item__commentsnumber">576</view>
+          </view>
+        </view>
+       </view> 
+     </scroll-view>
+  </swiper-item>
+</swiper>
 </block>
 
 <block wx:if="{{bar == 2}}">

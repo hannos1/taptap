@@ -5,12 +5,14 @@ const app = getApp()
 Page({
   data: {
     bar:0,
+    message:0,
     concerns:[],
     hots:[],
     officials:[],
     recentgames:[],
     navHeight:app.globalData.navHeight,
     navTop:app.globalData.navTop,
+    objectheight:app.globalData.objectheight,
     },
 
   // 事件处理函数
@@ -25,6 +27,25 @@ Page({
     this.setData({
       bar:bar
     })
+  },
+
+  selectmessage(e){
+    let message = e.currentTarget.dataset.message;
+    // console.log(message)
+    this.setData({
+      message:message
+    })
+  },
+
+  messageswiper(e){
+    // console.log(e)
+    if(e.detail.source == 'touch'){
+      let message = e.detail.current;
+      // console.log(message)
+      this.setData({
+        message:message
+      })
+    }
   },
 
   searchbar(){
