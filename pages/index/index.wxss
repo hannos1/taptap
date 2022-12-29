@@ -145,7 +145,7 @@
 
 .message_swiperitem__scrollview{
   width:100%;
-  height:2000rpx;
+  height:6000rpx;
   /* background-color:red; */
 }
 
@@ -181,6 +181,8 @@
   margin-left:28rpx;
   display: inline-block;
 }
+
+
 
 .message_item__name{
   display: inline-block;
@@ -268,10 +270,15 @@
 
 .message_item__bdimg{
   width:100%;
-  /* height:388rpx; */
+  height:388rpx;
   margin-top: 5rpx;
   background-size: cover;
   background-position:-50%;
+}
+
+.message_item__vedio{
+  width:100%;
+  height:388rpx;
 }
 
 .message_item__ft{

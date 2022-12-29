@@ -118,61 +118,86 @@
 <swiper class="message_swiper" current="{{message}}" bindchange="messageswiper">
   <swiper-item class="message_swiperitem">
      <scroll-view class="message_swiperitem__scrollview">
+    <!-- <block wx:if="{{message == 0}}"> -->
+     <block wx:for="{{suggest}}"  wx:key="id">
        <view class="message_item__suggest">
         <view class="message_item__hd">
-          <view class="message_item__hdimg" style="background-image:url('https://tse4-mm.cn.bing.net/th/id/OIP-C.T7WDrLOqJu0kABZysi2nUwAAAA?pid=ImgDet&rs=1');"></view>
-          <view class="message_item__name">手谈姬sdfsdfssdfsdfsfdfsd</view>
+          <view class="message_item__hdimg" style="background-image:url({{item.userimg}});"></view>
+          <view class="message_item__name">{{item.username}}</view>
           <view class="message_item_tsmask">
-          <view class="message_item__time">11月26日sdfsdfsdfsdf</view>
-          <view class="message_item__section">游戏杂谈sdfssdfsdsfdfsdf</view>
+          <view class="message_item__time">{{item.datetime}}</view>
+          <view class="message_item__section">{{item.section}}</view>
           </view>
         </view>
         <view class="message_item__bd">
-          <view class="message_item__bdtitle">敖厂长又被喷了敖sdfsdfdsfsdfafadfafdafdafafdafdafafdafa</view>
-          <view class="message_item__bdartical">设计的覅圣诞节欧菲JFK你的身份看上的那份数量的快捷方式看大家分厘卡圣诞节分类打算离开房间啊收到了JFK是立刻搭街坊昆仑山京东方顺利打开附件是快递放假了</view>
-          <view class="message_item__bdimg" style="height:{{388}}rpx;background-image:url('https://img.3dmgame.com/uploads/images/thumbpicfirst/20200915/1600132818_429312.jpg');"></view>
+          <view class="message_item__bdtitle">{{item.title}}</view>
+          <view class="message_item__bdartical">{{item.artical}}</view>
+          <view class="message_item__bdimg" hidden="{{item.backgroundimage === ''}}" style="background-image:url({{item.backgroundimage}});"></view>
+          <video 
+          hidden="{{item.backgroundimage !== ''}}"
+          id="suggestvideo-{{item.id}}"
+          bindplay="videoplay"
+          class="message_item__vedio"
+          object-fit="cover"
+          src="{{item.video}}"
+          poster="{{item.poster}}"
+          />
         </view>
         <view class="message_item__ft">
           <view class="message_item__support">
             <view class="message_item__supportimg"></view>
-            <view class="message_item__supportnumber">1318</view>
+            <view class="message_item__supportnumber">{{item.support}}</view>
           </view>
           <view class="message_item__comments">
             <view class="message_item__commentsimg"></view>
-            <view class="message_item__commentsnumber">576</view>
+            <view class="message_item__commentsnumber">{{item.comments}}</view>
           </view>
         </view>
        </view> 
-       
+      </block>
+    <!-- </block> -->
      </scroll-view>
   </swiper-item>
   <swiper-item class="message_swiperitem">
      <scroll-view class="message_swiperitem__scrollview">
-      <view class="message_item__suggest">
+      <!-- <block wx:if="{{message == 1}}"> -->
+      <block wx:for="{{concern}}"  wx:key="id">
+       <view class="message_item__suggest">
         <view class="message_item__hd">
-          <view class="message_item__hdimg" style="background-image:url('https://tse4-mm.cn.bing.net/th/id/OIP-C.T7WDrLOqJu0kABZysi2nUwAAAA?pid=ImgDet&rs=1');"></view>
-          <view class="message_item__name">手谈姬sdfsdfssdfsdfsfdfsd</view>
+          <view class="message_item__hdimg" style="background-image:url({{item.userimg}});"></view>
+          <view class="message_item__name">{{item.username}}</view>
           <view class="message_item_tsmask">
-          <view class="message_item__time">11月26日sdfsdfsdfsdf</view>
-          <view class="message_item__section">游戏杂谈sdfssdfsdsfdfsdf</view>
+          <view class="message_item__time">{{item.datetime}}</view>
+          <view class="message_item__section">{{item.section}}</view>
           </view>
         </view>
         <view class="message_item__bd">
-          <view class="message_item__bdtitle">敖厂长又被喷了敖</view>
-          <view class="message_item__bdartical">设计的覅圣诞节欧菲JFK你的身份看上的那份数量的快捷方式看大家分厘卡圣诞节分类打算离开房间啊收到了JFK是立刻搭街坊昆仑山京东方顺利打开附件是快递放假了</view>
-          <view class="message_item__bdimg" style="height:{{388}}rpx;background-image:url('https://img.3dmgame.com/uploads/images/thumbpicfirst/20200915/1600132818_429312.jpg');"></view>
+          <view class="message_item__bdtitle">{{item.title}}</view>
+          <view class="message_item__bdartical">{{item.artical}}</view>
+          <view class="message_item__bdimg" hidden="{{item.backgroundimage === ''}}" style="background-image:url({{item.backgroundimage}});"></view>
+          <video 
+          hidden="{{item.backgroundimage !== ''}}"
+          id="concernvideo-{{item.id}}"
+          bindplay="videoplay"
+          class="message_item__vedio"
+          object-fit="cover"
+          src="{{item.video}}"
+          poster="{{item.poster}}"
+          />
         </view>
         <view class="message_item__ft">
           <view class="message_item__support">
             <view class="message_item__supportimg"></view>
-            <view class="message_item__supportnumber">1318</view>
+            <view class="message_item__supportnumber">{{item.support}}</view>
           </view>
           <view class="message_item__comments">
             <view class="message_item__commentsimg"></view>
-            <view class="message_item__commentsnumber">576</view>
+            <view class="message_item__commentsnumber">{{item.comments}}</view>
           </view>
         </view>
        </view> 
+      </block>
+    <!-- </block> -->
      </scroll-view>
   </swiper-item>
 </swiper>
