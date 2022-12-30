@@ -6,6 +6,7 @@ Page({
   data: {
     bar:0,
     message:0,
+    mymessage:0,
     concerns:[],
     currentvideo:null,
     hots:[],
@@ -36,6 +37,14 @@ Page({
     // console.log(message)
     this.setData({
       message:message
+    })
+  },
+
+  selectmymessage(e){
+    let mymessage = e.currentTarget.dataset.mymessage;
+    // console.log(message)
+    this.setData({
+      mymessage:mymessage
     })
   },
 

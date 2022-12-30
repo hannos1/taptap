@@ -139,7 +139,7 @@
           bindplay="videoplay"
           class="message_item__vedio"
           object-fit="cover"
-          src="{{item.video}}"
+          src="https://stream7.iqilu.com/10339/upload_transcode/202002/18/20200218114723HDu3hhxqIT.mp4"
           poster="{{item.poster}}"
           />
         </view>
@@ -181,7 +181,7 @@
           bindplay="videoplay"
           class="message_item__vedio"
           object-fit="cover"
-          src="{{item.video}}"
+          src="https://stream7.iqilu.com/10339/upload_transcode/202002/18/20200218114723HDu3hhxqIT.mp4"
           poster="{{item.poster}}"
           />
         </view>
@@ -204,7 +204,110 @@
 </block>
 
 <block wx:if="{{bar == 2}}">
-<view>me</view>
+<scroll-view class="message_swiperitem__scrollview">
+<view class="me_contianer">
+  <view class="me_title_image"></view>
+  <view class="me_user__cardmask">
+    <view class="me_user__cardbd">
+    <view class="me_user__img" style="background-image: url('https://img3.tapimg.com/avatars/75ca834cea74d092f4761a62ac24f363.png?imageMogr2/auto-orient/strip/thumbnail/!180x180r/gravity/Center/crop/180x180/format/jpg/interlace/1/quality/80');"></view>
+    <view class="me_user__name">医愚</view>
+    <view class="me_user__id">ID: 55464654</view>
+    <view class="me_user__description">Hello Gamer!</view>
+    </view>
+    <view class="me_user__ft">
+      <view class="me_user__fans">
+        <view class="me_user__number">6666666</view>
+        <view class="me_user__label">粉丝</view>
+      </view>
+      <view class="me_user__concern">
+        <view class="me_user__number">8888888</view>
+        <view class="me_user__label">关注</view>
+      </view>
+    </view>
+  </view>
+  <view style="width:100%;height:260rpx;"></view>
+  <view class="message_swiperbar">
+  <view class="message_swiperbar__baritem"  bindtap="selectmymessage" data-mymessage="0">
+  <view class="message_swiperbar__barlabel  {{mymessage == 0 && 'message_swiperbar__barlabelcheck'}}">评价</view>
+  <view class="{{mymessage == 0 && 'message_swiperbar__barborder'}}"></view>
+  </view>
+  <view class="message_swiperbar__baritem"  bindtap="selectmymessage" data-mymessage="1">
+  <view class="message_swiperbar__barlabel {{mymessage == 1 && 'message_swiperbar__barlabelcheck'}}">内容</view>
+  <view class="{{mymessage == 1 && 'message_swiperbar__barborder'}}"></view>
+  </view>
+  </view>
+      <block wx:if="{{mymessage == 0}}">
+      <view class="message_item__suggest">
+        <view class="message_item__hd">
+          <view class="message_item__hdimg" style="background-image:url('https://img3.tapimg.com/avatars/75ca834cea74d092f4761a62ac24f363.png?imageMogr2/auto-orient/strip/thumbnail/!180x180r/gravity/Center/crop/180x180/format/jpg/interlace/1/quality/80');"></view>
+          <view class="message_item__name">医愚</view>
+          <view class="message_item_tsmask">
+          <view class="message_item__time">2022/8/2</view>
+          <view class="message_item__section" style="color:#717171">游戏时长 98.8小时 (华为 荣耀30s)</view>
+          </view>
+        </view>
+        <view class="message_item__bd">
+          <view class="message_item__bdartical">★ ★ ★ ★ 这游戏为啥不能换武器？？</view>
+          <view class="game_card__type1">
+            <view class="game_card__img1" style="background-image: url('https://img.tapimg.com/market/lcs/fca7812d481baacc0619d8b3e2cb2bd8_360.png?imageView2/1/w/180/q/80/interlace/1/ignore-error/1');"></view>
+            <view class="game_card__name1">帕斯卡契约</view>
+            <view class="game_card__comments1">评分:9.2(38727人)</view>
+          </view>
+        </view>
+        <view class="message_item__ft">
+          <view class="message_item__support">
+            <view class="message_item__supportimg"></view>
+            <view class="message_item__supportnumber">点赞</view>
+          </view>
+          <view class="message_item__comments">
+            <view class="message_item__commentsimg"></view>
+            <view class="message_item__commentsnumber">回复</view>
+          </view>
+        </view>
+       </view> 
+      </block>
+
+      <block wx:if="{{mymessage == 1}}">
+        <view class="message_item__suggest">
+        <view class="message_item__hd">
+          <view class="message_item__hdimg" style="background-image:url('https://img3.tapimg.com/avatars/75ca834cea74d092f4761a62ac24f363.png?imageMogr2/auto-orient/strip/thumbnail/!180x180r/gravity/Center/crop/180x180/format/jpg/interlace/1/quality/80');"></view>
+          <view class="message_item__name">医愚</view>
+          <view class="message_item_tsmask">
+          <view class="message_item__time" style="color:#22bdba">明日方舟</view>
+          <view class="message_item__section" style="color:#717171;">2021/1/20</view>
+          </view>
+        </view>
+        <view class="message_item__bd">
+          <view class="message_item__bdtitle">不敢打合约，我该怎么办？</view>
+          <view class="message_item__bdartical">求名医诊断一下病情，我是否只适合长草？</view>
+          <view class="message_item__bdimg" hidden="{{false}}" style="background-image:url('https://img2.tapimg.com/bbcode/images/d254e43e6e7bd50c92e161295403e770.jpg?imageView2/2/w/1080/h/9999/q/80/format/jpg/interlace/1/ignore-error/1');"></view>
+          <video 
+          hidden="{{true}}"
+          id="suggestvideo-{{item.id}}"
+          bindplay="videoplay"
+          class="message_item__vedio"
+          object-fit="cover"
+          src="https://stream7.iqilu.com/10339/upload_transcode/202002/18/20200218114723HDu3hhxqIT.mp4"
+          poster=""
+          />
+        </view>
+        <view class="message_item__ft">
+          <view class="message_item__support">
+            <view class="message_item__supportimg"></view>
+            <view class="message_item__supportnumber">1</view>
+          </view>
+          <view class="message_item__comments">
+            <view class="message_item__commentsimg"></view>
+            <view class="message_item__commentsnumber">3</view>
+          </view>
+        </view>
+       </view>
+      </block>
+      <view class="page_end">
+        <label class="page_end__lable">暂无更多</label>
+      </view>
+</view>
+</scroll-view>
 </block>
 </view>
 
