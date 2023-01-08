@@ -16,6 +16,9 @@ Page({
     navHeight:app.globalData.navHeight,
     navTop:app.globalData.navTop,
     objectheight:app.globalData.objectheight,
+    userinfo:{},
+    appraise:[],
+    content:[]
     },
 
   // 事件处理函数
@@ -83,16 +86,19 @@ Page({
       url: 'https://www.fastmock.site/mock/dfd6cd04918aa964002f30ba98a805c4/mapmap/home',
       success:(res) => {
           // console.log(res)
-          let {concerns,hots,officials,recentgames,suggest,concern} = res.data.data;
+          let {concerns,hots,officials,recentgames,suggest,concern,me} = res.data.data;
           this.setData({
             concerns:concerns,
             hots:hots,
             officials:officials,
             recentgames:recentgames,
             suggest:suggest,
-            concern:concern
+            concern:concern,
+            userinfo:me.info,
+            appraise:me.appraise,
+            content:me.content
           })
-          // console.log(this.data.suggest)
+          // console.log(this.data.userinfo)
         }
     })
   },

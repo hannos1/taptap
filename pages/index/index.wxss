@@ -909,12 +909,13 @@ background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAADICAYAA
 }
 
 .me_user__cardmask{
-  position: absolute;
+  position: relative;
   z-index:999;
-  top:82rpx;
+  top:-82rpx;
   width:690rpx;
-  margin-left:30rpx;
-  margin-right:30rpx;
+  /* margin-left:30rpx;
+  margin-right:30rpx; */
+  margin:0 auto;
   /* border: 1rpx solid black; */
   border-radius:6rpx;
   background-color: #ffffff;
@@ -958,7 +959,7 @@ background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAADICAYAA
   /* line-height: 40rpx; */
   text-align: left;
   font-weight: 700;
-  margin-left: 218rpx;
+  margin-left: 228rpx;
   margin-bottom:10rpx;
   margin-top:28rpx;
   margin-right:28rpx;
@@ -1036,6 +1037,7 @@ background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAADICAYAA
 .game_card__name1,.game_card__comments1{
   float: left;
   margin-left:160rpx;
+  min-width:200rpx;
   height:40rpx;
   margin-top: 26rpx;
   font-weight: 700;

@@ -16,22 +16,100 @@ Page({
       items:[
         {
           id:1,
+          context:"年度结果大赏"
         },
         {
-          id:2
+          id:2,
+          context:"香肠排队"
         },
         {
-          id:3
+          id:3,
+          context:"原神"
         },{
-          id:4
+          id:4,
+          context:"超能力冲刺"
         },{
-          id:5
+          id:5,
+          context:"王国纪元"
         },{
-          id:6
+          id:6,
+          context:"蛋仔派对"
         },{
-          id:7
+          id:7,
+          context:"原神 最新兑换码"
         },{
-          id:8
+          id:8,
+          context:"鹅鸭杀"
+        }
+        ,{
+          id:9,
+          context:"我的世界"
+        }
+        ,{
+          id:10,
+          context:"暗影战姬"
+        }
+      ],
+      tags:[
+        {
+          id:1,
+          tagname:"策略",
+          hash:""
+        },
+        {
+          id:2,
+          tagname:"角色扮演",
+          hash:""
+        },
+        {
+          id:3,
+          tagname:"单机",
+          hash:""
+        },
+        {
+          id:4,
+          tagname:"模拟经营",
+          hash:""
+        },
+        {
+          id:5,
+          tagname:"多人联机",
+          hash:""
+        },
+        {
+          id:6,
+          tagname:"休闲",
+          hash:""
+        },
+        {
+          id:7,
+          tagname:"解谜",
+          hash:""
+        },
+        {
+          id:8,
+          tagname:"卡牌",
+          hash:""
+        },
+        {
+          id:9,
+          tagname:"Roguelike",
+          hash:""
+        },
+        {
+          id:10,
+          tagname:"音游",
+          hash:""
+        }
+      ],
+      searchhistory:[
+        {
+          context:"蛋仔排队 礼包码",
+          hash:""
+        },
+        {
+          context:"原神 七圣召唤",
+          hash:""
         }
       ]
     })
